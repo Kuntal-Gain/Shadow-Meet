@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:shadow_meet/app/screens/auth/verify_screen.dart';
+import 'package:shadow_meet/app/screens/home_screen.dart';
 import 'package:shadow_meet/core/utils/constants/colors_constants.dart';
 import 'package:shadow_meet/core/utils/constants/images_constants.dart';
 import 'package:shadow_meet/core/utils/constants/size_constants.dart';
@@ -28,6 +30,7 @@ class _AuthScreenState extends State<AuthScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            sizeVer(10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -113,21 +116,30 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
               ),
             ),
-            Container(
-              height: 60,
-              width: double.infinity,
-              margin: EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: AppColor.blue,
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Center(
-                child: Text(
-                  isLogin ? "Login" : "Create Account",
-                  style: appStyle(
-                    size: 22,
-                    color: AppColor.white,
-                    fontWeight: FontWeight.bold,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => VerifyScreen(),
+                  ),
+                );
+              },
+              child: Container(
+                height: 60,
+                width: double.infinity,
+                margin: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: AppColor.blue,
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Center(
+                  child: Text(
+                    isLogin ? "Login" : "Create Account",
+                    style: appStyle(
+                      size: 22,
+                      color: AppColor.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

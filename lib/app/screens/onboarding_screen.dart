@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shadow_meet/app/screens/auth_screen.dart';
+import 'package:shadow_meet/app/screens/auth/auth_screen.dart';
 import 'package:shadow_meet/core/utils/constants/colors_constants.dart';
 import 'package:shadow_meet/core/utils/constants/images_constants.dart';
 import 'package:shadow_meet/core/utils/constants/size_constants.dart';
